@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-jan2022-assignment6",
+  "version": "1.0.0",
+  "description": "Edureka NodeJS Certification, Module 7 User Authentication And Application Security assignment with JWT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbanerjee/nodeJS-jan2022-assignment6.git"
+  },
+  "author": "Chunilal Banerjee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbanerjee/nodeJS-jan2022-assignment6/issues"
+  },
+  "homepage": "https://github.com/cbanerjee/nodeJS-jan2022-assignment6#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "ejs": "^3.1.6",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.4.1",
+    "mongoose": "^6.2.4",
+    "node-localstorage": "^2.2.1",
+    "path": "^0.12.7"
+  }
+}
