@@ -33,6 +33,10 @@ const isadmin = (token) => {
     })
 }
 
+Router.get('/',(req, res)=>{
+    res.render('register',{user :{type: 'admin'}});
+})
+
 Router.get("/shopping_list/", (req, res) => {
     const token = localStorage.getItem('authtoken');
     if (isadmin(token)) {
@@ -94,7 +98,6 @@ Router.post("/registeruser/", (req, res) => { //not admin
         (err, user) => {
             if (err) { console.log(err); res.redirect("/login/") }
             else {
-                htmlMsg = encodeURIComponent('Added New User DONE !');
                 res.redirect("/login/")
             }
         }
