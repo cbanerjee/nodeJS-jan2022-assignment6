@@ -126,21 +126,22 @@ Router.post("/add_user/", (req, res) => {
 })
 
 Router.post("/login/", (req, res) => {
-
+    console.log(req.body);
     usermodel.findOne({ email: req.body.email }, (err, user) => {
-        if (err) return res.status(500).send('Error on the server.');
-        if (user.password == req.body.password) {
-
-            var token = jwt.sign({ id: user._id }, config.secret, {
+        if (err) {
+            return res.status(500).send('Login Error');
+        } else if (user.password == req.body.password) {
+            var token = jwt.sign({ id: user._id }, jwtsecret, {
                 expiresIn: 86400 // expires in 24 hours
             });
 
             localStorage.setItem('authtoken', token)
 
             return res.redirect("/shopping_list/");
+        } else {
+            res.send("Invalid Login");
         }
     });
-    res.send("Invalid Login");
 })
 
 Router.post("/add_order/", (req, res) => {
